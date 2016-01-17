@@ -15,8 +15,14 @@ exports.getMarkets = function(req, res) {
 	if (!req.user) {
 		return res.redirect('/');
 	}
-	res.render('market/list', {
-		title: 'Markets'
+	Market.find({}).exec(function(error, markets) {
+		console.log(req.user.email)
+		res.render('market/list', {
+			title: 'Markets',
+			markets: _.filter(markets, function(market) {
+				return _.includes(market.users, req.user.email);
+			})
+		});
 	});
 };
 

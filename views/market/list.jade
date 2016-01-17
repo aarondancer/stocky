@@ -1,4 +1,14 @@
 extends ../layout
 
 block content
-	
+  .page-header
+    h3 Markets
+    a(href="/markets/new" class="btn btn-default") New Market
+
+  .div(class="row")
+    ul
+      each market in markets
+        li
+          a(href="/markets/#{market.id}")= market.name
+
+
