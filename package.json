@@ -26,6 +26,7 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.13.0",
     "express-validator": "^2.18.0",
+    "faker": "^3.0.1",
     "fbgraph": "^1.1.0",
     "github-api": "^0.10.7",
     "instagram-node": "^0.5.8",
